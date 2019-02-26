@@ -40,8 +40,10 @@ function doStuffWithDomain(domain)
 
       if(level != 0 && (!this_tree.hasOwnProperty('children') || this_tree.children.length == 0))
       {
+
+
           //Check appropriatness
-          if(getDomainFromLink(this_tree.url) == domain)
+          if(this_tree.hasOwnProperty('url') && getDomainFromLink(this_tree.url) == domain)
             kugos.push(this_tree);
           counters.splice(counters.length - 1, 1);
           level--;
